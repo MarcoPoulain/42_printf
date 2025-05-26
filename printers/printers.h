@@ -6,13 +6,13 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 14:26:01 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/26 14:27:05 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/26 15:19:33 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTERS_H
 # define PRINTERS_H
 
-int	cast_char(int c);
+int	cast_char(char c);
 
 #endif

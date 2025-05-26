@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extract_glyph.c                                    :+:      :+:    :+:   */
+/*   test_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 13:30:36 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/26 15:02:36 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/26 15:14:37 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/26 15:18:05 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
+#include "printers.h"
+#include "../ft_printf.h"
+#include <stdio.h>
 
-static int	is_valid_glyph(char c)
+int	main(void)
 {
-	return (c == 'c' || c == '%');
-}
-
-char	extract_glyph(const char *format, int *i)
-{
-	(*i)++;
-	if (format[*i] && is_valid_glyph(format[*i]))
-		return (format[*i]);
+	printf("La fonction standard: %%, %c, %c\n", 'y', 'z');
+	ft_printf("Ma fonction: %%, %c, %c\n", 'y', 'z');
 	return (0);
 }
