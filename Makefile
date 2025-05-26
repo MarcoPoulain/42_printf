@@ -8,7 +8,8 @@ LIBFT = $(LIBFT_DIR)/libft.a
 SRC = ft_printf.c \
 	  extract_glyph.c \
 	  dispatch.c \
-	  printers/cast_char.c
+	  printers/cast_char.c \
+	  libft/ft_putchar.c
 OBJ := $(SRC:.c=.o)
 
 all : $(NAME)

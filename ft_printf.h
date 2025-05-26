@@ -6,13 +6,13 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:56:57 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/26 15:03:51 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:25:45 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
-# define FT_PRITNF_H
+# define FT_PRINTF_H
 # include <stdarg.h>
-#inlude "printers.h"
+#include "printers.h"
 
 int		ft_printf(const char *format, ...);
 char	extract_glyph(const char *format, int *i);
