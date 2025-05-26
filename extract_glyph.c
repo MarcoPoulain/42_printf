@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   extract_glyph.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 12:56:57 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/26 14:19:24 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/26 13:30:36 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/26 13:31:53 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
-# define FT_PRITNF_H
-# include <stdarg.h>
 
-int		ft_printf(const char *format, ...);
-char	extract_glyph(const char *format, int *i);
-int		dispatch(char glyph, va_list args);
-#endif
+static int	is_valid_glyph(char c)
+{
+	return (c == 'c' || c == '%');
+}
+
+char	extract_glyph(const char *format, int *i)
+{
+	(*i)++;
+	if (format[*i] && is_valid_glyph(format[*i]))
+		return (format[*i]);
+	return (0);
+}

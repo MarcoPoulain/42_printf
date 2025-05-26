@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I libft/ -I printers/
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a

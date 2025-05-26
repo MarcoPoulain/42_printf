@@ -1,44 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   cast_char.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 12:56:42 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/26 14:34:30 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/26 14:29:59 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/26 14:32:20 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "libft.h"
+#include "printers.h"
 
-int	ft_printf(const char *format, ...)
+int	cast_char(char c)
 {
-	va_list	args;
-	int		i;
-	int		count;
-	char	glyph;
-
-	i = 0;
-	count = 0;
-	va_start(args, format);
-	while (format[i])
-	{
-		if (format[i] == '%' && format[i +1])
-		{
-			glyph = extract_glyph(format, &i);
-			if (!glyph)
-				return (-1);
-			count += dispatch(glyph, args);
-		}
-		else
-		{
-			ft_putchar(format[i]);
-					count++;
-		}
-		i++;
-	}
-	va_end(args);
-	return (count);
+	ft_putchar(c);
+	return (1);
 }

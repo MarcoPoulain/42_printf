@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   printers.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 12:56:57 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/26 14:19:24 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/26 14:26:01 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/26 14:27:05 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
-# define FT_PRITNF_H
-# include <stdarg.h>
 
-int		ft_printf(const char *format, ...);
-char	extract_glyph(const char *format, int *i);
-int		dispatch(char glyph, va_list args);
+#ifndef PRINTERS_H
+# define PRINTERS_H
+
+int	cast_char(int c);
+
 #endif

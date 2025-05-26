@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   dispatch.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 12:56:42 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/26 14:34:30 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/26 14:11:30 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/26 14:34:42 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
+#include "printers.h"
 
-int	ft_printf(const char *format, ...)
+int	dispatch(char glyph, va_list args)
 {
-	va_list	args;
-	int		i;
-	int		count;
-	char	glyph;
-
-	i = 0;
-	count = 0;
-	va_start(args, format);
-	while (format[i])
+	if (glyph == 'c')
+		return (convert_char(va_args(args, int)));
+	if (glyph == '%')
 	{
-		if (format[i] == '%' && format[i +1])
-		{
-			glyph = extract_glyph(format, &i);
-			if (!glyph)
-				return (-1);
-			count += dispatch(glyph, args);
-		}
-		else
-		{
-			ft_putchar(format[i]);
-					count++;
-		}
-		i++;
+		ft_putchar('%');
+		return (1);
 	}
-	va_end(args);
-	return (count);
+	return (0);
 }
