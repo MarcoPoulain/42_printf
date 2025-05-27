@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 14:11:30 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/27 13:56:27 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/27 15:18:42 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	dispatch(char glyph, va_list args)
 		return (cast_int(va_arg(args, int)));
 	if (glyph == 's')
 		return (cast_string(va_arg(args, char *)));
+	if (glyph == 'u')
+		return (cast_uint(va_arg(args, unsigned int)));
 	if (glyph == '%')
 	{
 		ft_putchar('%');

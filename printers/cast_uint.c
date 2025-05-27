@@ -1,23 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_printf.c                                   :+:      :+:    :+:   */
+/*   cast_uint.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 15:14:37 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/27 15:16:21 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/27 15:03:50 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/27 15:14:09 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "printers.h"
-#include "../ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
+static int	ft_putuint(unsigned int n)
 {
-	printf("La fonction standard: %c, %u, %s\n", 'z', 123, (char *) NULL);
-	ft_printf("Ma fonction: %c, %u, %s\n", 'z', 123, (char *) NULL);
-	return (0);
+	char			str[11];
+	unsigned int	i;
+	unsigned int	count;
+	long			nb;
+
+	i = 0;
+	nb = n;
+	count = 0;
+	if (nb == 0)
+	{
+		ft_putchar('0');
+		return (1);
+	}
+	while (nb > 0)
+	{
+		str[i++] = nb % 10 + '0';
+		nb /= 10;
+		count ++;
+	}
+	while (i--)
+		ft_putchar(str[i]);
+	return (count);
+}
+
+int	cast_uint(unsigned int n)
+{
+	return (ft_putuint(n));
 }
