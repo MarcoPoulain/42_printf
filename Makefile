@@ -9,14 +9,15 @@ SRC = ft_printf.c \
 	  extract_glyph.c \
 	  dispatch.c \
 	  printers/cast_char.c \
-	  libft/ft_putchar.c
+	  printers/cast_int.c
+
 OBJ := $(SRC:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
 	make -C $(LIBFT_DIR)
-	ar rc $(NAME) $(OBJ) $(LIBFT)
+	ar rc $(NAME) $(OBJ) $(LIBFT_DIR)/*.o
 	ranlib $(NAME)
 
 %.o : %.c ft_printf.h
@@ -28,12 +29,11 @@ clean:
 
 fclean: clean
 	make fclean -C $(LIBFT_DIR)
-	rm -f $(NAME)
+	rm -f $(NAME) run_test
 
 re: fclean all
 
-test:
-	@$(CC) $(CFLAGS) tests/test_$(TEST) $(SRC) -o run_test
+test: $(NAME)
+	@$(CC) $(CFLAGS) tests/test_$(TEST) $(NAME) $(LIBFT) -o run_test
 	./run_test
-
 .PHONY: all clean fclean re test

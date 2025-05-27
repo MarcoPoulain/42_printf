@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 14:26:01 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/26 15:19:33 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/27 12:55:37 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define PRINTERS_H
 
 int	cast_char(char c);
+int	cast_int(int n);
 
 #endif

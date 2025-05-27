@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extract_glyph.c                                    :+:      :+:    :+:   */
+/*   cast_int.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 13:30:36 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/27 13:02:22 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/27 12:47:20 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/27 12:53:20 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "libft.h"
+#include "printers.h"
+#include <stdlib.h>
 
-static int	is_valid_glyph(char c)
+int	cast_int(int n)
 {
-	return (c == 'c' || c == '%' || c == 'd' || c == 'i');
-}
+	char	*itoa;
+	int		count;
 
-char	extract_glyph(const char *format, int *i)
-{
-	(*i)++;
-	if (format[*i] && is_valid_glyph(format[*i]))
-		return (format[*i]);
-	return (0);
+	itoa = ft_itoa(n);
+	ft_putstr(itoa);
+	count = ft_strlen(itoa);
+	free(itoa);
+	return (count);
 }
