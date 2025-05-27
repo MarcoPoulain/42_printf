@@ -11,7 +11,8 @@ SRC = ft_printf.c \
 	  printers/cast_char.c \
 	  printers/cast_int.c \
 	  printers/cast_string.c \
-	  printers/cast_uint.c
+	  printers/cast_uint.c \
+	  printers/cast_hex.c
 
 OBJ := $(SRC:.c=.o)
 

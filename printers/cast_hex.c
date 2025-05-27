@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dispatch.c                                         :+:      :+:    :+:   */
+/*   cast_hex.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 14:11:30 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/27 16:24:59 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/27 16:27:16 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/27 16:42:39 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "libft.h"
 #include "printers.h"
 
-int	dispatch(char glyph, va_list args)
+int	cast_hex(unsigned int n)
 {
-	if (glyph == 'c')
-		return (cast_char(va_arg(args, int)));
-	if (glyph == 'd' || glyph == 'i')
-		return (cast_int(va_arg(args, int)));
-	if (glyph == 's')
-		return (cast_string(va_arg(args, char *)));
-	if (glyph == 'u')
-		return (cast_uint(va_arg(args, unsigned int)));
-	if (glyph == 'x')
-		return (cast_hex(va_arg(args, unsigned int)));
-	if (glyph == '%')
+	char			*base;
+	char			buffer[17];
+	unsigned int	i;
+	unsigned int	count;
+
+	base = "0123456789abcdef";
+	i = 0;
+	count = 0;
+	if (n == 0)
 	{
-		ft_putchar('%');
+		ft_putchar('0');
 		return (1);
 	}
-	return (0);
+	while (n > 0)
+	{
+		buffer[i++] = base[n % 16];
+		n = n / 16;
+		count++;
+	}
+	while (i > 0)
+	{
+		ft_putchar(buffer[--i]);
+	}
+	return (count);
 }

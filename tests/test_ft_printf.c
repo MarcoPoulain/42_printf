@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 15:14:37 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/27 15:16:21 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/27 16:34:39 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	main(void)
 {
-	printf("La fonction standard: %c, %u, %s\n", 'z', 123, (char *) NULL);
-	ft_printf("Ma fonction: %c, %u, %s\n", 'z', 123, (char *) NULL);
+	printf("La fonction standard: %c, %x, %s\n", 'z', 1789, (char *) NULL);
+	ft_printf("Ma fonction: %c, %x, %s\n", 'z', 1789, (char *) NULL);
 	return (0);
 }
