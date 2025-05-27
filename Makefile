@@ -9,7 +9,8 @@ SRC = ft_printf.c \
 	  extract_glyph.c \
 	  dispatch.c \
 	  printers/cast_char.c \
-	  printers/cast_int.c
+	  printers/cast_int.c \
+	  printers/cast_string.c
 
 OBJ := $(SRC:.c=.o)
 

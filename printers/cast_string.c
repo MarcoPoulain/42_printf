@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dispatch.c                                         :+:      :+:    :+:   */
+/*   cast_string.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 14:11:30 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/27 13:20:42 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/27 13:15:09 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/27 13:38:55 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "libft.h"
 #include "printers.h"
+#include <unistd.h>
 
-int	dispatch(char glyph, va_list args)
+int	cast_string(char *str)
 {
-	if (glyph == 'c')
-		return (cast_char(va_arg(args, int)));
-	if (glyph == 'd' ||  glyph == 'i')
-		return (cast_int(va_arg(args, int)));
-	if (glyph == 's')
-		return (cast_string(va_arg(args, char*)));
-	if (glyph == '%')
-	{
-		ft_putchar('%');
-		return (1);
-	}
-	return (0);
+	if (!str)
+		return (write(1, "(null)", 6));
+	ft_putstr(str);
+	return (ft_strlen(str));
 }
