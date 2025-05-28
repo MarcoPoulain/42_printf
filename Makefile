@@ -3,7 +3,6 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -I libft/ -I printers/
 
 LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
 
 SRC = ft_printf.c \
 	  extract_glyph.c \
@@ -39,6 +38,7 @@ fclean: clean
 re: fclean all
 
 test: $(NAME)
-	@$(CC) $(CFLAGS) tests/test_$(TEST) $(NAME) $(LIBFT) -o run_test
-	./run_test
+	@$(CC) $(CFLAGS) tests/test_$(TEST) $(NAME) -o run_test
+	@./run_test
+
 .PHONY: all clean fclean re test

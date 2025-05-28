@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:56:42 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/26 14:34:30 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/28 15:02:39 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,28 @@
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	args;
-	int		i;
-	int		count;
-	char	glyph;
+	va_list		args;
+	t_printf	scribe;
 
-	i = 0;
-	count = 0;
+	scribe.i = 0;
+	scribe.count = 0;
 	va_start(args, format);
-	while (format[i])
+	while (format[scribe.i])
 	{
-		if (format[i] == '%' && format[i +1])
+		if (format[scribe.i] == '%' && format[scribe.i +1])
 		{
-			glyph = extract_glyph(format, &i);
-			if (!glyph)
+		scribe.glyph = extract_glyph(format, &scribe.i);
+			if (!scribe.glyph)
 				return (-1);
-			count += dispatch(glyph, args);
+			scribe.count += dispatch(scribe.glyph, args);
 		}
 		else
 		{
-			ft_putchar(format[i]);
-					count++;
+			ft_putchar(format[scribe.i]);
+					scribe.count++;
 		}
-		i++;
+		scribe.i++;
 	}
 	va_end(args);
-	return (count);
+	return (scribe.count);
 }
