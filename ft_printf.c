@@ -6,37 +6,50 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:56:42 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/28 15:02:39 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/28 16:29:33 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-int	ft_printf(const char *format, ...)
+static int	parse_dispatch(const char *format, va_list args)
 {
-	va_list		args;
-	t_printf	scribe;
+	int		i;
+	int		count;
+	char	glyph;
 
-	scribe.i = 0;
-	scribe.count = 0;
-	va_start(args, format);
-	while (format[scribe.i])
+	i = 0;
+	count = 0;
+	while (format[i])
 	{
-		if (format[scribe.i] == '%' && format[scribe.i +1])
+		if (format[i] == '%' && format[i + 1])
 		{
-		scribe.glyph = extract_glyph(format, &scribe.i);
-			if (!scribe.glyph)
+			glyph = extract_glyph(format, &i);
+			if (!glyph)
 				return (-1);
-			scribe.count += dispatch(scribe.glyph, args);
+			count += dispatch(glyph, args);
 		}
 		else
 		{
-			ft_putchar(format[scribe.i]);
-					scribe.count++;
+			ft_putchar(format[i]);
+			count++;
 		}
-		scribe.i++;
+		i++;
 	}
+	return (count);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list	args;
+	int		count;
+
+	if (!format)
+		return (-1);
+	count = 0;
+	va_start(args, format);
+	count = parse_dispatch(format, args);
 	va_end(args);
-	return (scribe.count);
+	return (count);
 }
