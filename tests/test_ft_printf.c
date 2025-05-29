@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 15:14:37 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/28 18:39:53 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:01:18 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	main(void)
 	printf("Fonction Standard: %d, %i, %u\n", -42, 42, 304235645);
 	ft_printf("Fonction 42: %d, %i, %u\n\n", -42, 42, 304235645);
 	printf("===========================\n\n");
-	printf("Check des hexadecimaux pour '666' et '777':\n\n");
-	printf("Fonction standard: %x, %X\n", 666, 777);
-	ft_printf("Fonction 42: %x, %X\n\n", 666, 777);
+	printf("Check des hexadecimaux pour '666':\n\n");
+	printf("Fonction standard: %x, %X\n", 666, 666);
+	ft_printf("Fonction 42: %x, %X\n\n", 666, 666);
 	printf("===========================\n\n");
 	printf("Check des pointeurs:\n\n");
 	printf("Fonction standard: %p\n", ptr);
@@ -56,5 +56,19 @@ int	main(void)
 	y = printf("abcdef\n");
 	z = ft_printf("abcdef\n");
 	ft_printf("Standard: %d, Fonction 42: %d\n\n", y, z);
+	printf("===========================\n\n");
+	printf("Check des (char *)NULL\n\n");
+	printf("Fonction standard: %s\n", (char *)NULL);
+	ft_printf("Fonction 42: %s\n\n", (char *)NULL);
+	printf("===========================\n\n");
+	printf("Check de printf(NULL)\n\n");
+	y = printf(NULL);
+	z = ft_printf(NULL);
+	printf("Fonction standard: %d\n", y);
+	ft_printf("Fonction 42: %d\n\n", z);
+	printf("===========================\n\n");
+	printf("Check des pointeurs NULL\n\n");
+	printf("Fonction standard: %p\n", (void *)NULL);
+	ft_printf("Fonction 42: %p\n\n", (void *)NULL);
 	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cast_heX.c                                         :+:      :+:    :+:   */
+/*   cast_uphex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 16:45:58 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/27 17:49:04 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:07:00 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	cast_uphex(unsigned int n)
 {
 	char			*base;
-	char			buffer[17];
+	char			buffer[8];
 	unsigned int	i;
 	unsigned int	count;
 

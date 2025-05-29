@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 17:56:50 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/28 14:55:08 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:07:10 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 static int	cast_hex_long(unsigned long n)
 {
 	char	*base;
-	char	buffer[17];
+	char	buffer[16];
 	int		i;
 	int		count;
 
