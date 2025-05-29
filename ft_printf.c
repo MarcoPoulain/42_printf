@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 12:56:42 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/28 16:29:33 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:32:20 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ static int	parse_dispatch(const char *format, va_list args)
 		if (format[i] == '%' && format[i + 1])
 		{
 			glyph = extract_glyph(format, &i);
-			if (!glyph)
-				return (-1);
 			count += dispatch(glyph, args);
 		}
 		else

@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 15:14:37 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/29 14:01:18 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/29 14:44:20 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,7 @@ int	main(void)
 	printf("Check des pointeurs NULL\n\n");
 	printf("Fonction standard: %p\n", (void *)NULL);
 	ft_printf("Fonction 42: %p\n\n", (void *)NULL);
+	printf("===========================\n\n");
+	//ft_printf("ddsfdsfd %");
 	return (0);
 }
